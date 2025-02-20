@@ -8,7 +8,9 @@
     "dev": "nodemon index.js",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+   "build:ui": "rmdir /s /q dist && cd ../OpenFullCourse/part2/phonebook && npm run build && xcopy /s /e /y dist ..\\OpenFullCourseP2\\dist",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "dependencies": {
     "cors": "^2.8.5",
